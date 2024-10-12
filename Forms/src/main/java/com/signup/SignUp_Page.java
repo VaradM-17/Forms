@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/submit")
+@WebServlet("/signup")
 public class SignUp_Page extends HttpServlet
 {
     @Override
