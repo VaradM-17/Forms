@@ -27,19 +27,19 @@ public class SignIn_Page extends HttpServlet
 		try 
 		{
 			Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/register", "root", "root");
+                        Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/register", "root", "root");
             
-            String query = "select * from signupdetails where email=? and password=?";
-            PreparedStatement ps = c.prepareStatement(query);
-            ps.setString(1, email);
-            ps.setString(2, password);
+                        String query = "select * from signupdetails where email=? and password=?";
+                        PreparedStatement ps = c.prepareStatement(query);
+                        ps.setString(1, email);
+                        ps.setString(2, password);
             
-            ResultSet rs= ps.executeQuery();
+                        ResultSet rs = ps.executeQuery();
             
-            if (rs.next())
-            	out.print("<h1>Welcome " + email + "</h1>");
-            else
-            	out.print("<h1>Something Went Wrong .....</h1>"); 
+                        if (rs.next())
+            	             out.print("<h1>Welcome " + email + "</h1>");
+                        else
+            	             out.print("<h1>Something Went Wrong .....</h1>"); 
             
 		} 
 		catch (Exception e) 
